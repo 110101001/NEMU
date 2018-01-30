@@ -1,0 +1,14 @@
+#include "cpu/instr.h"
+
+static void instr_execute_1op() {
+	opr_dest.addr=cpu.esp;
+	opr_dest.type=OPR_MEM;
+	operand_read(opr_dest);
+	operand_read(opr_src);
+	opr_dest.val=opr_src.val;
+	operand_write(opr_dest);
+	operand_write(opr_src);
+}
+
+
+make_instr_impl_1op(push,r,v)

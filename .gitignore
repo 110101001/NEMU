@@ -1,0 +1,4 @@
+*.o
+*.d
+testcase/bin
+game/src/nemu-pal/data
